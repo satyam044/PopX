@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+input:focus ~ label{
+    top: -0.80rem;
+    left: 0.25rem;
+    padding: 0 0.25rem;
+}
