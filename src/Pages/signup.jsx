@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const signup = () => {
+const Signup = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     fname: '',
     phone: '',
     email: '',
@@ -51,10 +51,26 @@ const signup = () => {
         <div className='flex flex-col gap-2 mt-2'>
           <p>Are you an agency? <span className='text-red-400'>*</span></p>
           <div className='flex items-center gap-3'>
-            <input type="radio" id='yes' name='agency' value='yes' className='w-6 h-6 cursor-pointer' onChange={handleChange} />
-            <label htmlFor='yes' className='text-xl cursor-pointer'>Yes</label>
-            <input type="radio" id='no' name='agency' value='no' className='w-6 h-6 cursor-pointer' onChange={handleChange} />
-            <label htmlFor='no' className='text-xl cursor-pointer'>No</label>
+            <input
+              type="radio"
+              id="yes"
+              name="agency"
+              value="yes"
+              checked={formData.agency === "yes"}
+              className="w-6 h-6 cursor-pointer"
+              onChange={handleChange}
+            />
+            <label htmlFor="yes" className="text-xl cursor-pointer">Yes</label>
+            <input
+              type="radio"
+              id="no"
+              name="agency"
+              value="no"
+              checked={formData.agency === "no"}
+              className="w-6 h-6 cursor-pointer"
+              onChange={handleChange}
+            />
+            <label htmlFor="no" className="text-xl cursor-pointer">No</label>
           </div>
         </div>
         <button type="submit" className={`absolute bottom-0 w-full p-2 text-2xl cursor-auto text-white rounded-xl mt-4 ${!formData.fname || !formData.phone || !formData.email || !formData.password || formData.agency === '' ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 cursor-pointer hover:bg-blue-600'}`} disabled={!formData.fname || !formData.phone || !formData.email || !formData.password || formData.agency === ''}>Create Account</button>
@@ -63,4 +79,4 @@ const signup = () => {
   )
 }
 
-export default signup
+export default Signup
