@@ -47,9 +47,6 @@ PopX/
 🚀 Getting Started Locally
 You’ll need Node.js ≥ 18 and npm installed
 
-bash
-Copy
-Edit
 # Clone the repo
 git clone https://github.com/satyam044/popx.git
 cd popx
@@ -84,9 +81,5 @@ GitHub Profile »
 
 ⭐ Like this project?
 Give it a ⭐ on GitHub or fork it and customize your own frontend UI kit!
-
-yaml
-Copy
-Edit
 
 ---
